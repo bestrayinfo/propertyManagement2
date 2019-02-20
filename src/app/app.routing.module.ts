@@ -4,13 +4,18 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'companyowner',
-    loadChildren: `./company-owner/company-owner.module#CompanyOwnerModule`
-  }
+    path: '',
+    loadChildren: './company-owner/company-owner.module#CompanyOwnerModule'
+  },
   // {
   //   path: 'orders',
   //   loadChildren: './orders/orders.module#OrdersModule'
-
+  // },
+  // {
+  //   path: '',
+  //   redirectTo: '',
+  //   pathMatch: 'full'
+  // }
 ];
 
 @NgModule({
