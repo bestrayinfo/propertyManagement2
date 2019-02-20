@@ -1,5 +1,201 @@
-<div>
-<h1>
-  hello world
-</h1>
-</div>
+
+<div class="register-mn">
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div class="col-sm-12">
+          <h4 class="text-left">User Credential :</h4>
+          <div class="col-lg-12">
+            <div class="form-group">
+                       <div class="user col-lg-4">
+                        <input class="form-control" formControlName="userName" type="text" name="username" placeholder="User Name" required>
+  
+                        <span style="font-weight: bold; color: red;font-size: 11px" *ngIf="!registerForm.controls['userName'].valid&&registerForm.controls['userName'].touched">
+                          <span *ngIf="registerForm.controls.userName.errors.required">*User name is required</span>
+                          <span *ngIf="registerForm.controls.userName.errors.minlength">*minimum length should be 4</span>
+  
+                        </span>
+                      
+                      </div>
+                    </div>
+                      <div class="user col-lg-4">
+                        <input class="form-control" type="password" formControlName="password" name="password" placeholder="Password" required>
+                        <span style="font-weight: bold; color: red;font-size: 11px" *ngIf="!registerForm.controls['password'].valid&&registerForm.controls['password'].touched">
+                          <span *ngIf="registerForm.controls.password.errors.required">*Password is required</span>
+                          <span *ngIf="registerForm.controls.password.errors.minlength">*minimum length should be 4</span>
+                        </span>
+                      </div>
+                      <div class="user col-lg-4">
+                         <input class="form-control" type="password" formControlName="password" name="repassword" placeholder="Confirm Password" required>
+                         <span style="font-weight: bold; color: red;font-size: 11px" *ngIf="!registerForm.controls['password'].valid&&registerForm.controls['password'].touched">
+                          <span *ngIf="registerForm.controls.password.errors.required">*Password is required</span>
+  
+                        </span>
+                        </div>
+                      <div class="clearfix"></div>
+                    </div>
+                        </div>
+  
+  <div class="col-sm-12">
+      <h4 class="text-left">Company Owner Info :</h4>
+  
+              <div class="user col-lg-3">        
+             <input class="form-control" formControlName="firstName" placeholder="First Name" required="" type="text">
+             <span style="font-weight: bold; color: red;font-size: 11px" *ngIf="!registerForm.controls['firstName'].valid&&registerForm.controls['firstName'].touched">
+              <span *ngIf="registerForm.controls.firstName.errors.required">*firstName is required</span>
+              <span *ngIf="registerForm.controls.firstName.errors.minlength">*minimum length should be 4</span>
+            </span>
+            </div>
+             
+            <div class="user col-lg-3"> 
+              <input class="form-control" formControlName="middleName" placeholder="Middle Name" required="" type="text">
+              <span style="font-weight: bold; color: red;font-size: 11px" *ngIf="!registerForm.controls['middleName'].valid&&registerForm.controls['middleName'].touched">
+              <span *ngIf="registerForm.controls.middleName.errors.required">*middleName is required</span>
+              <span *ngIf="registerForm.controls.middleName.errors.minlength">*minimum length should be 4</span>
+            </span>
+            </div>
+  
+          
+            <div class="user col-lg-3">
+             <input class="form-control" formControlName="lastName" placeholder="Last Name" required="" type="text">
+             <span style="font-weight: bold; color: red;font-size: 11px" *ngIf="!registerForm.controls['lastName'].valid&&registerForm.controls['lastName'].touched">
+              <span *ngIf="registerForm.controls.lastName.errors.required">*lastName is required</span>
+              <span *ngIf="registerForm.controls.lastName.errors.minlength">*minimum length should be 4</span>
+            </span>
+            </div>
+          <div class="user col-lg-3">
+            <input class="form-control" formControlName="email"placeholder="Email " required="" type="text">
+            <span style="font-weight: bold; color: red;font-size: 11px" *ngIf="!registerForm.controls['email'].valid&&registerForm.controls['email'].touched">
+              <span *ngIf="registerForm.controls.email.errors.email">*email is required</span>
+            </span>
+          </div> 
+          <div class="user col-lg-3">
+             <input class="form-control" formControlName="phoneHome" placeholder="Home Contact Number " required="" type="text">
+             <span style="font-weight: bold; color: red;font-size: 11px" *ngIf="!registerForm.controls['phoneHome'].valid&&registerForm.controls['phoneHome'].touched">
+              <span *ngIf="registerForm.controls.phoneHome.errors.required">*number is required</span>
+              <span *ngIf="registerForm.controls.phoneHome.errors.minlength">*minimum length should be 10</span>
+            </span>
+            </div>
+          <div class="user col-lg-3">
+             <input class="form-control" formControlName="phoneOffice" placeholder="Office Contact Number " required="" type="text">
+             <span style="font-weight: bold; color: red;font-size: 11px" *ngIf="!registerForm.controls['phoneOffice'].valid&&registerForm.controls['phoneOffice'].touched">
+              <span *ngIf="registerForm.controls.phoneOffice.errors.required">*number is required</span>
+              <span *ngIf="registerForm.controls.phoneOffice.errors.minlength">*minimum length should be 10</span>
+            </span>
+            </div>
+          <div class="user col-lg-3">
+             <input class="form-control"formControlName="phoneMobile" placeholder="Mobile Contact Number " required="" type="text">
+             <span style="font-weight: bold; color: red;font-size: 11px" *ngIf="!registerForm.controls['phoneMobile'].valid&&registerForm.controls['phoneMobile'].touched">
+              <span *ngIf="registerForm.controls.phoneMobile.errors.required">*number is required</span>
+              <span *ngIf="registerForm.controls.phoneMobile.errors.minlength">*minimum length should be 10</span>
+            </span>
+            </div>
+          <div formGroupName="address">
+          <div class="user col-lg-3">
+            <textarea class="form-control" formControlName="address1" placeholder="Permanent Address" required=""></textarea>
+            <span style="font-weight: bold; color: red;font-size: 11px" *ngIf="!registerForm.controls['address'].controls['address1'].valid&&registerForm.controls['address'].controls['address1'].touched">
+              <span *ngIf="registerForm.controls.address.controls.address1.errors.required">*address1 is required</span>
+            </span>
+          </div>
+          <div class="user col-lg-3">
+            <textarea class="form-control" formControlName="address2" placeholder="Temporary Address" required=""></textarea>
+            <span style="font-weight: bold; color: red;font-size: 11px" *ngIf="!registerForm.controls['address'].controls['address2'].valid&&registerForm.controls['address'].controls['address2'].touched">
+              <span *ngIf="registerForm.controls.address.controls.address2.errors.required">*address2 is required</span>
+            </span>
+          </div>
+          <div class="user col-lg-3">
+            <input class="form-control" formControlName="city" placeholder="City" required="" type="text">	
+            <span style="font-weight: bold; color: red;font-size: 11px" *ngIf="!registerForm.controls['address'].controls['city'].valid&&registerForm.controls['address'].controls['city'].touched">
+              <span *ngIf="registerForm.controls.address.controls.city.errors.required">*city is required</span>
+            </span>
+          </div>
+          <div class="user col-lg-3">
+            <input class="form-control" formControlName="state" placeholder="State" required="" type="text">	
+            <span style="font-weight: bold; color: red;font-size: 11px" *ngIf="!registerForm.controls['address'].controls['state'].valid&&registerForm.controls['address'].controls['state'].touched">
+              <span *ngIf="registerForm.controls.address.controls.state.errors.required">*state is required</span>
+            </span>
+          </div>
+          <div class="user col-lg-3">
+            <input class="form-control" formControlName="zip1" placeholder="Zip1" required="" type="text">	
+            <span style="font-weight: bold; color: red;font-size: 11px" *ngIf="!registerForm.controls['address'].controls['zip1'].valid&&registerForm.controls['address'].controls['zip1'].touched">
+              <span *ngIf="registerForm.controls.address.controls.zip1.errors.required">*zip1 is required</span>
+            </span>
+          </div>
+          <div class="user col-lg-3">
+            <input class="form-control" formControlName="zip2" placeholder="Zip2" required="" type="text">	
+            <span style="font-weight: bold; color: red;font-size: 11px" *ngIf="!registerForm.controls['address'].controls['zip2'].valid&&registerForm.controls['address'].controls['zip2'].touched">
+              <span *ngIf="registerForm.controls.address.controls.zip2.errors.required">*zip2 is required</span>
+            </span>
+          </div>
+        </div>
+          <div class="clearfix"></div>
+             
+    </div>
+      <div class="col-sm-12">
+                
+             
+   <h4 class="text-left">Company Info :</h4>
+   <div formGroupName="company">
+   <div class="user col-lg-3">
+    <input class="form-control" formControlName="name" placeholder="Company Name" required="" type="text">
+    <span style="font-weight: bold; color: red;font-size: 11px" *ngIf="!registerForm.controls['company'].controls['name'].valid&&registerForm.controls['company'].controls['name'].touched">
+        <span *ngIf="registerForm.controls.company.controls.name.errors.required">*name is required</span>
+      </span>
+  </div>
+   
+  <!-- <div class="user col-lg-3">
+    <input class="form-control" formControlName="companyofficenumber"  placeholder="Office Contact Number " required="" type="text">
+  </div>
+  <div class="user col-lg-3">
+    <input class="form-control"formControlName="companymobnumber" placeholder="Mobile Contact Number " required="" type="text">
+  </div> -->
+  
+  <div class="user col-lg-3">
+         <input class="form-control" formControlName="ein" placeholder="EIN" required="" type="text">
+         <span style="font-weight: bold; color: red;font-size: 11px" *ngIf="!registerForm.controls['company'].controls['ein'].valid&&registerForm.controls['company'].controls['ein'].touched">
+            <span *ngIf="registerForm.controls.company.controls.ein.errors.required">*ein is required</span>
+          </span>
+        </div>	
+      <div class="user col-lg-3">
+        <input class="form-control"formControlName="stateRegNo" placeholder="State Registered" required="" type="text">
+        <span style="font-weight: bold; color: red;font-size: 11px" *ngIf="!registerForm.controls['company'].controls['stateRegNo'].valid&&registerForm.controls['company'].controls['stateRegNo'].touched">
+            <span *ngIf="registerForm.controls.company.controls.stateRegNo.errors.required">*stateRegNo is required</span>
+          </span>
+        </div>	
+        
+      <div class="user col-lg-3">
+         <input class="form-control" formControlName="noOfUnits" placeholder="Number of Unit" required="" type="text">
+         <span style="font-weight: bold; color: red;font-size: 11px" *ngIf="!registerForm.controls['company'].controls['noOfUnits'].valid&&registerForm.controls['company'].controls['noOfUnits'].touched">
+            <span *ngIf="registerForm.controls.company.controls.noOfUnits.errors.required">*noOfUnits is required</span>
+          </span>
+        </div>
+  
+        <div formGroupName="address">
+            <div class="user col-lg-3">
+             <input class="form-control" formControlName="city" placeholder="City" required="" type="text">
+            </div>
+            <div class="user col-lg-3">	
+             <input class="form-control" formControlName="state" placeholder="State" required="" type="text">
+            </div>
+            
+            <div class="user col-lg-3">
+             <textarea class="form-control" formControlName="address1" placeholder="Permanent Address" required=""></textarea>
+            </div>
+            <div class="user col-lg-3">
+             <textarea class="form-control" formControlName="address2" placeholder="Temporary Address" required=""></textarea>	
+            </div>
+            <div class="user col-lg-3">
+             <input class="form-control" formControlName="zip1" placeholder="Zip1" required="" type="text">
+            </div>
+            <div class="user col-lg-3">	
+             <input class="form-control" formControlName="zip2" placeholder="Zip2" required="" type="text">
+            </div>
+            </div>
+    </div>
+      <div class="user col-lg-12"><button type="submit" [disabled]="!registerForm.valid" class="sub-btn"  name="">Submit</button></div>
+      <div class="clearfix"></div>
+           
+   
+             
+   </div>	
+      </form>
+  </div>
+  
