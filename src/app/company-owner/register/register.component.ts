@@ -83,7 +83,7 @@ export class RegisterComponent implements OnInit {
    .subscribe(data=>{
      alert("user register successfully")
      console.log(data)
-    //  this.router.navigateByUrl('message')
+      this.router.navigateByUrl('login')
    },err=>{
          console.log(err);
          alert("problem");

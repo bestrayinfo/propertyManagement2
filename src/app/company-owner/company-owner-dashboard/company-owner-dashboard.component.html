@@ -15,7 +15,8 @@
             <ngb-tab title="Manager">
               <ng-template ngbTabContent>
                 <br>
-                
+                <app-login loginType='manager'></app-login>
+
                 </ng-template>
             </ngb-tab>
             <ngb-tab title="CompanyOwner">
@@ -24,7 +25,7 @@
                 <ngb-tabset>
                   <ngb-tab title="Login" id="lgin">
                     <ng-template ngbTabContent>
-                    
+                    <app-login loginType='companyOwner'></app-login>
                     </ng-template>
                   </ngb-tab>
                   <ngb-tab title="Register">
