@@ -7,9 +7,10 @@ import { RegisterComponent } from './register/register.component';
 import { CompanyOwnerDashboardComponent } from './company-owner-dashboard/company-owner-dashboard.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { CompanyOwnerService } from './company-owner.service';
+
 import { LoginComponent } from '../shared-component/login/login.component';
 import { SharedComponentModule } from '../shared-component/shared-component.module';
+import { CompanyOwnerService } from './service/company-owner.service';
 
 
 

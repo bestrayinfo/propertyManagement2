@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { CompanyOwnerService } from '../company-owner.service';
+import { CompanyOwnerService } from '../service/company-owner.service';
 
 // @ts-ignore
 @Component({
