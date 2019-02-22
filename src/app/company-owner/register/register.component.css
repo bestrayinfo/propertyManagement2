@@ -1,5 +1,5 @@
 .user{float:left;padding-left: 3px;padding-right: 3px;}
-.user .form-control{margin-bottom: 10px;height: 32px;font-size: 13px;}
+.user .form-control{margin-bottom: 15px;height: 32px;font-size: 13px;}
 .register-mn h4{font-size: 20px;}
 .register-mn{margin-top: 10px;}
 .sub-btn{    width: 15%;
@@ -11,6 +11,11 @@
 .error {
         color: red;
     }
+.user span{
+  position: absolute;
+  top: 16px;
+  width: 100%;
+}
       
 /* input.ng-invalid.ng-touched {
     border: 1px solid red;
