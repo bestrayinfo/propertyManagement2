@@ -8,7 +8,7 @@ import { LoginComponent } from '../shared-component/login/login.component';
 const routes: Routes = [{
   path: '', component: CompanyOwnerDashboardComponent
 },
-{path: 'login',component:LoginComponent}
+{path: 'login',component:LoginComponent }
 ];
 
 @NgModule({
