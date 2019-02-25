@@ -7,29 +7,29 @@ import { TokenStorageService } from '../auth/token-storage.service';
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
- 
+
 })
 export class LoginComponent implements OnInit {
 
- 
+
   loginForm: FormGroup;
   submitted = false;
-  @Input() loginType:any;
+  @Input() loginType: any;
 
-  constructor(private formBuilder:  FormBuilder,private authService: AuthService, private tokenStorage:TokenStorageService) { }
+  constructor(private formBuilder:  FormBuilder, private authService: AuthService, private tokenStorage: TokenStorageService) { }
 
   ngOnInit() {
-    
-    this.loginForm=this.formBuilder.group({
-      username:['',Validators.required],
-      password:['',Validators.required]
+
+    this.loginForm = this.formBuilder.group({
+      username: ['', Validators.required],
+      password: ['', Validators.required]
     });
   }
-  onSubmit(){
+  onSubmit() {
     console.log(this.loginType);
     console.log(this.loginForm.value);
 
-    if(this.loginType!='manager'){
+    if (this.loginType != 'manager') {
 
 
       this.authService.attemptAuth(this.loginForm.value).subscribe(
@@ -37,18 +37,18 @@ export class LoginComponent implements OnInit {
           this.tokenStorage.saveToken(data.token);
           // this.tokenStorage.saveUsername(data.username);
           // this.tokenStorage.saveAuthorities(data.authorities);
-          //localStorage.setItem('token',JSON.stringify(data.));
-  
+          // localStorage.setItem('token',JSON.stringify(data.));
+
 
           console.log(data);
-          //this.reloadPage();
+          // this.reloadPage();
         },
         error => {
           console.log(error);
-         
+
         }
       );
-      
+
     }}
     reloadPage() {
       window.location.reload();

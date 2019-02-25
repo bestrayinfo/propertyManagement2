@@ -81,9 +81,10 @@ export class RegisterComponent implements OnInit {
 
    this.userService.addCompanyOwner(this.registerForm.value)
    .subscribe(data=>{
-     alert("user register successfully")
-     console.log(data)
-      this.router.navigateByUrl('login')
+     alert("user register successfully");
+     console.log(data);
+      //this.router.navigateByUrl('login')
+     this.reloadPage();
    },err=>{
          console.log(err);
          alert("problem");
@@ -91,5 +92,8 @@ export class RegisterComponent implements OnInit {
    
    )
  }
+  reloadPage() {
+    window.location.reload();
+  }
 
 }
