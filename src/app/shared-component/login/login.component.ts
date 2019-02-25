@@ -29,13 +29,13 @@ export class LoginComponent implements OnInit {
     console.log(this.loginType);
     console.log(this.loginForm.value);
 
-    if (this.loginType != 'manager') {
+    if (this.loginType === 'companyOwner') {
 
 
       this.authService.attemptAuth(this.loginForm.value).subscribe(
         data => {
           this.tokenStorage.saveToken(data.token);
-          // this.tokenStorage.saveUsername(data.username);
+           this.tokenStorage.saveUsername(data.username);
           // this.tokenStorage.saveAuthorities(data.authorities);
           // localStorage.setItem('token',JSON.stringify(data.));
 
@@ -49,7 +49,8 @@ export class LoginComponent implements OnInit {
         }
       );
 
-    }}
+    }
+  }
     reloadPage() {
       window.location.reload();
     }

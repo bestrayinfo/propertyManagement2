@@ -22,7 +22,7 @@ import { CompanyHomeDashboardComponent } from './company-home-dashboard/company-
   imports: [
     NgbModule, NgbPaginationModule, NgbAlertModule,
     CommonModule,
-    CompanyOwnerRoutingModule,ReactiveFormsModule,HttpClientModule,SharedComponentModule
+    CompanyOwnerRoutingModule,ReactiveFormsModule,HttpClientModule, SharedComponentModule
   ],
   declarations: [
     RegisterComponent,
