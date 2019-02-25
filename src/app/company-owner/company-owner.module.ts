@@ -27,7 +27,6 @@ import { CompanyHomeDashboardComponent } from './company-home-dashboard/company-
   declarations: [
     RegisterComponent,
     CompanyOwnerDashboardComponent,
-    CompanyHomeComponent,
     CompanyHomeDashboardComponent
   ],
   providers: [CompanyOwnerService]
