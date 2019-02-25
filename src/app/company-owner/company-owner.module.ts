@@ -12,6 +12,7 @@ import { LoginComponent } from '../shared-component/login/login.component';
 import { SharedComponentModule } from '../shared-component/shared-component.module';
 import { CompanyOwnerService } from './service/company-owner.service';
 import { CompanyHomeDashboardComponent } from './company-home-dashboard/company-home-dashboard.component';
+import { CompanyTempComponent } from './company-temp/company-temp.component';
 
 
 
@@ -27,7 +28,8 @@ import { CompanyHomeDashboardComponent } from './company-home-dashboard/company-
   declarations: [
     RegisterComponent,
     CompanyOwnerDashboardComponent,
-    CompanyHomeDashboardComponent
+    CompanyHomeDashboardComponent,
+    CompanyTempComponent
   ],
   providers: [CompanyOwnerService]
 })
