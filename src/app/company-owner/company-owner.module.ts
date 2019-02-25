@@ -11,7 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from '../shared-component/login/login.component';
 import { SharedComponentModule } from '../shared-component/shared-component.module';
 import { CompanyOwnerService } from './service/company-owner.service';
-import { CompanyHomeComponent } from './company-home/company-home.component';
+import { CompanyHomeDashboardComponent } from './company-home-dashboard/company-home-dashboard.component';
 
 
 
@@ -27,7 +27,8 @@ import { CompanyHomeComponent } from './company-home/company-home.component';
   declarations: [
     RegisterComponent,
     CompanyOwnerDashboardComponent,
-    CompanyHomeComponent
+    CompanyHomeComponent,
+    CompanyHomeDashboardComponent
   ],
   providers: [CompanyOwnerService]
 })
