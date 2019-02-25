@@ -34,14 +34,14 @@ export class LoginComponent implements OnInit {
 
       this.authService.attemptAuth(this.loginForm.value).subscribe(
         data => {
-          this.tokenStorage.saveToken(data);
+          this.tokenStorage.saveToken(data.token);
           // this.tokenStorage.saveUsername(data.username);
           // this.tokenStorage.saveAuthorities(data.authorities);
           //localStorage.setItem('token',JSON.stringify(data.));
   
 
           console.log(data);
-          this.reloadPage();
+          //this.reloadPage();
         },
         error => {
           console.log(error);
